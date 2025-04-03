@@ -52,7 +52,7 @@ const Blog = () => {
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center">
-                  <span className="text-sm text-blue-600 font-semibold mb-2">
+                  <span className="text-sm text-[#4e73b2] font-semibold mb-2">
                     FEATURED POST
                   </span>
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">
@@ -63,7 +63,7 @@ const Blog = () => {
                   </p>
                   <div>
                     <Button 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-[#4e73b2] hover:bg-[#3b5a8e] text-white"
                       onClick={() => navigateToArticle("top-5-injury-prevention-tips")}
                     >
                       Read Full Article
@@ -96,7 +96,7 @@ const Blog = () => {
                   />
                   <div className="p-6">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-xs text-blue-600 font-semibold">
+                      <span className="text-xs text-[#4e73b2] font-semibold">
                         {post.category}
                       </span>
                       <span className="text-xs text-gray-500">{post.date}</span>
@@ -105,7 +105,7 @@ const Blog = () => {
                     <p className="text-gray-600 mb-4">{post.excerpt}</p>
                     <Button
                       variant="outline"
-                      className="text-blue-600 border-blue-600 hover:bg-blue-50"
+                      className="text-[#4e73b2] border-[#4e73b2] hover:bg-[#4e73b2]/10"
                       onClick={() => navigateToArticle(post.slug)}
                     >
                       Read More
@@ -128,14 +128,14 @@ const Blog = () => {
                 </Button>
                 <Button 
                   variant={currentPage === 1 ? undefined : "outline"}
-                  className={currentPage === 1 ? "bg-blue-600 text-white" : "border-gray-300 text-gray-600"}
+                  className={currentPage === 1 ? "bg-[#4e73b2] text-white" : "border-gray-300 text-gray-600"}
                   onClick={() => handlePageChange(1)}
                 >
                   1
                 </Button>
                 <Button
                   variant="outline"
-                  className={currentPage === 2 ? "bg-blue-600 text-white" : "border-gray-300 text-gray-600"}
+                  className={currentPage === 2 ? "bg-[#4e73b2] text-white" : "border-gray-300 text-gray-600"}
                   onClick={() => handlePageChange(2)}
                 >
                   2
@@ -170,7 +170,7 @@ const Blog = () => {
                   placeholder="Your email address"
                   className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow max-w-md"
                 />
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6">
+                <Button className="bg-[#4e73b2] hover:bg-[#3b5a8e] text-white px-6">
                   Subscribe
                 </Button>
               </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navigation from "./Navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, User, Clock, Tag } from "lucide-react";
 import { Button } from "./ui/button";
 import nutritionImg from "../designs/nutrition.jpg";
 import concussionImg from "../designs/concussion.jpg";
@@ -15,6 +15,7 @@ interface Article {
   excerpt: string;
   date: string;
   slug: string;
+  author: string;
   content?: {
     introduction: string;
     keyPoints: {
@@ -35,6 +36,7 @@ const articles: Article[] = [
     excerpt:
       "Proper nutrition helps young athletes prevent injuries, recover faster, and perform at their best by fueling both their bodies and long-term success.",
     date: "February 12, 2025",
+    author: "Joy Lau",
     slug: "role-of-nutrition-in-injury-prevention",
     content: {
       introduction: "Nutrition plays a vital role in the overall health and performance of young athletes. Beyond fueling their bodies for training and competition, proper nutrition is essential for preventing injuries and supporting recovery. Here's how a well-balanced diet can make a difference:",
@@ -63,6 +65,7 @@ const articles: Article[] = [
     excerpt:
       "Concussions are a serious risk in youth sports, making education and early action essential. Recognizing symptoms, responding quickly, and allowing proper recovery can protect young athletes and promote long-term brain health.",
     date: "February 12, 2025",
+    author: "Joy Lau",
     slug: "understanding-concussions",
     content: {
       introduction: "Concussions are a serious concern in youth sports, and understanding how to recognize and manage them is crucial for the safety of young athletes. A concussion is a type of traumatic brain injury caused by a blow to the head or body that results in the brain moving rapidly within the skull.",
@@ -95,6 +98,7 @@ const articles: Article[] = [
     excerpt:
       "Discover five simple strategies to help young athletes prevent common injuries, stay healthy, and build the foundation they need to safely reach their athletic potential.",
     date: "February 12, 2025",
+    author: "Joy Lau",
     slug: "top-5-injury-prevention-tips",
     content: {
       introduction: "Injuries are a common concern in youth sports, but with the right precautions, many can be prevented. Here are five essential tips to help young athletes stay safe and perform at their best:",
@@ -131,8 +135,9 @@ const articles: Article[] = [
     excerpt:
       "Resilience is just as important as skill in youth sports. By embracing failure, developing a growth mindset, and supporting mental health, young athletes can build the confidence and strength they need to thrive both on and off the field.",
     date: "February 10, 2025",
+    author: "Joy Lau",
     slug: "mental-game-building-resilience",
-        content: {
+    content: {
       introduction: "In the world of youth sports, physical skills often take the spotlight, but the mental game is just as crucial. Resilience—the ability to bounce back from setbacks—is a key trait that young athletes need to develop to succeed both on and off the field.",
       keyPoints: [
         {
@@ -208,7 +213,7 @@ const ArticlePage = () => {
           </Button>
 
           {/* Article Header */}
-          <div className="mt-8">
+          <div className="mt-8 max-w-4xl mx-auto">
             <div className="aspect-[21/9] w-full overflow-hidden rounded-lg">
               <img
                 src={article.image}
@@ -221,9 +226,20 @@ const ArticlePage = () => {
           {/* Article Content */}
           <article className="max-w-4xl mx-auto mt-12 mb-20">
             <div className="flex items-center gap-4 text-sm text-gray-600 mb-6">
-              <span>{article.category}</span>
+              <span className="flex items-center gap-2">
+                <Tag size={16} />
+                {article.category}
+              </span>
               <span>•</span>
-              <span>{article.date}</span>
+              <span className="flex items-center gap-2">
+                <User size={16} />
+                {article.author}
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-2">
+                <Clock size={16} />
+                {article.date}
+              </span>
             </div>
             
             <h1 className="text-4xl font-bold mb-8">{article.title}</h1>
