@@ -6,6 +6,7 @@ const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeSection, setActiveSection] = useState("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -105,6 +106,11 @@ const Navigation = () => {
     window.scrollTo(0, 0);
   };
 
+  const handleMobileNavigation = (action: () => void) => {
+    action();
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="container mx-auto px-4 py-4">
@@ -174,7 +180,11 @@ const Navigation = () => {
             </button>
           </div>
           <div className="md:hidden">
-            <Button variant="ghost" size="sm">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -194,6 +204,60 @@ const Navigation = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-4 py-2 space-y-3 bg-white border-t border-gray-200">
+            <button
+              onClick={() => handleMobileNavigation(() => {
+                if (location.pathname === "/") {
+                  scrollToTop();
+                } else {
+                  navigate("/");
+                }
+              })}
+              className={`block w-full text-left px-4 py-2 text-[#002a5b] hover:bg-gray-50 ${
+                activeSection === "home" ? "text-[#4e73b2] font-semibold" : ""
+              }`}
+            >
+              Home
+            </button>
+            <button
+              onClick={() => handleMobileNavigation(() => scrollToSection("about"))}
+              className={`block w-full text-left px-4 py-2 text-[#002a5b] hover:bg-gray-50 ${
+                activeSection === "about" ? "text-[#4e73b2] font-semibold" : ""
+              }`}
+            >
+              About Us
+            </button>
+            <button
+              onClick={() => handleMobileNavigation(() => scrollToSection("services"))}
+              className={`block w-full text-left px-4 py-2 text-[#002a5b] hover:bg-gray-50 ${
+                activeSection === "services" ? "text-[#4e73b2] font-semibold" : ""
+              }`}
+            >
+              Services
+            </button>
+            <button
+              onClick={() => handleMobileNavigation(navigateToBlog)}
+              className={`block w-full text-left px-4 py-2 text-[#002a5b] hover:bg-gray-50 ${
+                activeSection === "blog" ? "text-[#4e73b2] font-semibold" : ""
+              }`}
+            >
+              Blog
+            </button>
+            <button
+              onClick={() => handleMobileNavigation(() => scrollToSection("contact"))}
+              className={`block w-full text-left px-4 py-2 text-[#002a5b] hover:bg-gray-50 ${
+                activeSection === "contact" ? "text-[#4e73b2] font-semibold" : ""
+              }`}
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
