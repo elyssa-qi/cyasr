@@ -1,9 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (location.pathname !== "/") {
+        // If we're not on the home page, don't track sections
+        return;
+      }
+
+      const sections = ["about", "services", "contact"];
+      const scrollPosition = window.scrollY;
+
+      // Check if we're in the home section (before the about section)
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        const aboutTop = aboutSection.getBoundingClientRect().top + window.pageYOffset - 150;
+        if (scrollPosition < aboutTop) {
+          setActiveSection("home");
+          return;
+        }
+      }
+
+      // Check other sections
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { top, bottom } = element.getBoundingClientRect();
+          const elementTop = top + window.pageYOffset - 150;
+          const elementBottom = bottom + window.pageYOffset - 150;
+
+          if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Trigger initial check
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [location.pathname]);
+
+  // Update active section when pathname changes
+  useEffect(() => {
+    if (location.pathname === "/blog") {
+      setActiveSection("blog");
+    } else if (location.pathname === "/") {
+      // Trigger a scroll check to set the correct section
+      const scrollPosition = window.scrollY;
+      window.scrollTo(scrollPosition, scrollPosition);
+    }
+  }, [location.pathname]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -13,14 +68,41 @@ const Navigation = () => {
   };
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 60; // Reduced space between nav and section
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 60; // Reduced space between nav and section
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     }
   };
 
   const navigateToBlog = () => {
     navigate("/blog");
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -28,39 +110,65 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-blue-600">CASR</span>
+            <button
+              onClick={() => {
+                if (location.pathname === "/") {
+                  scrollToTop();
+                } else {
+                  navigate("/");
+                }
+              }}
+              className="text-2xl font-bold text-[#4e73b2]"
+            >
+              CASR
+            </button>
             <span className="ml-2 text-sm text-gray-600">
-              Canadian Athletes Support & Resources
             </span>
           </div>
           <div className="hidden md:flex space-x-6">
             <button
-              onClick={() => navigate("/")}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => {
+                if (location.pathname === "/") {
+                  scrollToTop();
+                } else {
+                  navigate("/");
+                }
+              }}
+              className={`text-[#002a5b] hover:text-[#4e73b2] transition-colors font-semibold pb-1 ${
+                activeSection === "home" ? "border-b-2 border-[#4e73b2]" : ""
+              }`}
             >
               Home
             </button>
             <button
-              onClick={() => navigate("/#about")}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => scrollToSection("about")}
+              className={`text-[#002a5b] hover:text-[#4e73b2] transition-colors font-semibold pb-1 ${
+                activeSection === "about" ? "border-b-2 border-[#4e73b2]" : ""
+              }`}
             >
               About Us
             </button>
             <button
-              onClick={() => navigate("/#services")}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => scrollToSection("services")}
+              className={`text-[#002a5b] hover:text-[#4e73b2] transition-colors font-semibold pb-1 ${
+                activeSection === "services" ? "border-b-2 border-[#4e73b2]" : ""
+              }`}
             >
               Services
             </button>
             <button
               onClick={navigateToBlog}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className={`text-[#002a5b] hover:text-[#4e73b2] transition-colors font-semibold pb-1 ${
+                activeSection === "blog" ? "border-b-2 border-[#4e73b2]" : ""
+              }`}
             >
               Blog
             </button>
             <button
-              onClick={() => navigate("/#contact")}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => scrollToSection("contact")}
+              className={`text-[#002a5b] hover:text-[#4e73b2] transition-colors font-semibold pb-1 ${
+                activeSection === "contact" ? "border-b-2 border-[#4e73b2]" : ""
+              }`}
             >
               Contact
             </button>

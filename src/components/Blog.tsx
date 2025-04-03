@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import Navigation from "./Navigation";
+import nutritionImg from "../designs/nutrition.jpg";
+import concussionImg from "../designs/concussion.jpg";
+import hurdleImg from "../designs/hurdle.jpg";
 
 interface BlogPost {
   id: number;
@@ -13,31 +16,22 @@ interface BlogPost {
 }
 
 const Blog = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 3;
+
+  // Calculate the posts to show on current page
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
       <div className="pt-16">
-        {/* Blog Header */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-12"
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                CASR Blog
-              </h1>
-              <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-3xl mx-auto">
-                Stay updated with the latest news, tips, and stories from the
-                world of Canadian youth sports.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
         {/* Featured Post */}
         <section className="py-12">
           <div className="container mx-auto px-4">
@@ -55,12 +49,10 @@ const Blog = () => {
                     FEATURED POST
                   </span>
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                    Building Mental Resilience in Young Canadian Athletes
+                    Top 5 Injury Prevention Tips for Young Athletes
                   </h2>
                   <p className="text-gray-600 mb-6">
-                    Discover how mental toughness training is helping young
-                    Canadian athletes overcome performance anxiety and build the
-                    resilience needed to compete at the highest levels.
+                    Discover five simple strategies to help young athletes prevent common injuries, stay healthy, and build the foundation they need to safely reach their athletic potential.
                   </p>
                   <div>
                     <Button className="bg-blue-600 hover:bg-blue-700 text-white">
@@ -78,7 +70,7 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8">Latest Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {blogPosts.map((post) => (
+              {currentPosts.map((post) => (
                 <motion.div
                   key={post.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -118,26 +110,30 @@ const Blog = () => {
                 <Button
                   variant="outline"
                   className="border-gray-300 text-gray-600"
-                  disabled
+                  disabled={currentPage === 1}
+                  onClick={() => handlePageChange(1)}
                 >
                   Previous
                 </Button>
-                <Button className="bg-blue-600 text-white">1</Button>
+                <Button 
+                  variant={currentPage === 1 ? undefined : "outline"}
+                  className={currentPage === 1 ? "bg-blue-600 text-white" : "border-gray-300 text-gray-600"}
+                  onClick={() => handlePageChange(1)}
+                >
+                  1
+                </Button>
                 <Button
                   variant="outline"
-                  className="border-gray-300 text-gray-600"
+                  className={currentPage === 2 ? "bg-blue-600 text-white" : "border-gray-300 text-gray-600"}
+                  onClick={() => handlePageChange(2)}
                 >
                   2
                 </Button>
                 <Button
                   variant="outline"
                   className="border-gray-300 text-gray-600"
-                >
-                  3
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-gray-300 text-gray-600"
+                  disabled={currentPage === 2}
+                  onClick={() => handlePageChange(2)}
                 >
                   Next
                 </Button>
@@ -179,63 +175,40 @@ const Blog = () => {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    image:
-      "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80",
-    category: "TRAINING",
-    title: "5 Essential Training Tips for Young Hockey Players",
+    image: nutritionImg,
+    category: "NUTRITION",
+    title: "The Role of Nutrition in Injury Prevention and Recovery",
     excerpt:
-      "Discover the key training techniques that can help young hockey players improve their skills and performance on the ice.",
-    date: "May 15, 2023",
+      "Proper nutrition helps young athletes prevent injuries, recover faster, and perform at their best by fueling both their bodies and long-term success.",
+    date: "February 12, 2025",
   },
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1551927336-09d50efd69cd?w=800&q=80",
-    category: "NUTRITION",
-    title: "Nutrition Guide for Young Athletes: Fueling for Success",
+    image: concussionImg,
+    category: "HEALTH",
+    title: "Understanding Concussions: What Every Parent and Coach Should Know",
     excerpt:
-      "Learn about the optimal nutrition strategies to help young athletes perform at their best and recover effectively.",
-    date: "April 28, 2023",
+      "Concussions are a serious risk in youth sports, making education and early action essential. Recognizing symptoms, responding quickly, and allowing proper recovery can protect young athletes and promote long-term brain health.",
+    date: "February 12, 2025",
   },
   {
     id: 3,
     image:
       "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80",
-    category: "MENTAL HEALTH",
-    title: "Building Mental Resilience in Young Athletes",
+    category: "HEALTH",
+    title: "Top 5 Injury Prevention Tips for Young Athletes",
     excerpt:
-      "Explore strategies to help young athletes develop mental toughness and cope with the pressures of competitive sports.",
-    date: "April 10, 2023",
+      "Discover five simple strategies to help young athletes prevent common injuries, stay healthy, and build the foundation they need to safely reach their athletic potential.",
+    date: "February 12, 2025",
   },
   {
     id: 4,
-    image:
-      "https://images.unsplash.com/photo-1526676037777-05a232554d77?w=800&q=80",
-    category: "SUCCESS STORIES",
-    title: "From Local Rinks to National Team: Sarah's Journey",
+    image: hurdleImg,
+    category: "MENTAL HEALTH",
+    title: "The Mental Game: Building Resilience in Youth Sports",
     excerpt:
-      "The inspiring story of how a young hockey player from Vancouver made it to Canada's Junior National Women's team.",
-    date: "March 22, 2023",
-  },
-  {
-    id: 5,
-    image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
-    category: "EQUIPMENT",
-    title: "Choosing the Right Equipment for Young Track Athletes",
-    excerpt:
-      "A comprehensive guide to selecting appropriate gear that enhances performance while ensuring safety for young runners.",
-    date: "March 15, 2023",
-  },
-  {
-    id: 6,
-    image:
-      "https://images.unsplash.com/photo-1565992441121-4367c2967103?w=800&q=80",
-    category: "COACHING",
-    title: "Effective Coaching Strategies for Youth Soccer Development",
-    excerpt:
-      "Learn how coaches can create positive environments that foster skill development and love for the game in young players.",
-    date: "February 28, 2023",
+      "Resilience is just as important as skill in youth sports. By embracing failure, developing a growth mindset, and supporting mental health, young athletes can build the confidence and strength they need to thrive both on and off the field.",
+    date: "February 10, 2025",
   },
 ];
 

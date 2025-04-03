@@ -112,17 +112,6 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-16 px-4 md:px-8 bg-slate-50">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
-            Contact Us
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Have questions about how CASR can support young Canadian athletes?
-            Reach out to us using the form below or through our alternative
-            contact methods.
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Form */}
           <Card className="shadow-lg">
@@ -144,7 +133,7 @@ const ContactSection = () => {
               )}
 
               {isError && (
-                <Alert className="mb-6 bg-red-50 border-red-200 text-red-800">
+                <Alert className="mb-6 bg-[#4e73b2]/10 border-[#4e73b2] text-[#4e73b2]">
                   <AlertCircle className="h-4 w-4 mr-2" />
                   <AlertDescription>
                     There was an error sending your message. Please try again.
@@ -160,10 +149,10 @@ const ContactSection = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={errors.name ? "border-red-500" : ""}
+                    className={errors.name ? "border-[#4e73b2]" : ""}
                   />
                   {errors.name && (
-                    <p className="text-red-500 text-sm">{errors.name}</p>
+                    <p className="text-[#4e73b2] text-sm">{errors.name}</p>
                   )}
                 </div>
 
@@ -175,10 +164,10 @@ const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={errors.email ? "border-red-500" : ""}
+                    className={errors.email ? "border-[#4e73b2]" : ""}
                   />
                   {errors.email && (
-                    <p className="text-red-500 text-sm">{errors.email}</p>
+                    <p className="text-[#4e73b2] text-sm">{errors.email}</p>
                   )}
                 </div>
 
@@ -189,10 +178,10 @@ const ContactSection = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className={errors.subject ? "border-red-500" : ""}
+                    className={errors.subject ? "border-[#4e73b2]" : ""}
                   />
                   {errors.subject && (
-                    <p className="text-red-500 text-sm">{errors.subject}</p>
+                    <p className="text-[#4e73b2] text-sm">{errors.subject}</p>
                   )}
                 </div>
 
@@ -204,16 +193,16 @@ const ContactSection = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className={errors.message ? "border-red-500" : ""}
+                    className={errors.message ? "border-[#4e73b2]" : ""}
                   />
                   {errors.message && (
-                    <p className="text-red-500 text-sm">{errors.message}</p>
+                    <p className="text-[#4e73b2] text-sm">{errors.message}</p>
                   )}
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700"
+                  className="w-full bg-[#4e73b2] hover:bg-[#4e73b2]/90"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
@@ -251,7 +240,7 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start">
-                  <MapPin className="h-5 w-5 mr-3 text-blue-600 mt-0.5" />
+                  <MapPin className="h-5 w-5 mr-3 text-[#4e73b2] mt-0.5" />
                   <div>
                     <h4 className="font-medium">Main Office</h4>
                     <p className="text-slate-600">
@@ -261,29 +250,21 @@ const ContactSection = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <Phone className="h-5 w-5 mr-3 text-blue-600 mt-0.5" />
+                  <Phone className="h-5 w-5 mr-3 text-[#4e73b2] mt-0.5" />
                   <div>
                     <h4 className="font-medium">Phone</h4>
-                    <p className="text-slate-600">(416) 555-0123</p>
+                    <p className="text-slate-600">(647) 939-9982</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <Mail className="h-5 w-5 mr-3 text-blue-600 mt-0.5" />
+                  <Mail className="h-5 w-5 mr-3 text-[#4e73b2] mt-0.5" />
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-slate-600">info@casryouthsports.ca</p>
+                    <p className="text-slate-600">info@casr.com</p>
                   </div>
                 </div>
 
-                <div className="pt-4">
-                  <h4 className="font-medium mb-2">Office Hours</h4>
-                  <ul className="space-y-1 text-slate-600">
-                    <li>Monday - Friday: 9:00 AM - 5:00 PM</li>
-                    <li>Saturday: 10:00 AM - 2:00 PM</li>
-                    <li>Sunday: Closed</li>
-                  </ul>
-                </div>
               </CardContent>
             </Card>
           </div>

@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { ChevronUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "./Navigation";
+import ImageCarousel from "./ImageCarousel";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -67,9 +68,9 @@ const HomePage = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                About CASR
+                About Us
               </h2>
-              <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+              <div className="w-20 h-1 bg-[#4e73b2] mx-auto mb-6"></div>
               <p className="text-gray-600 max-w-3xl mx-auto">
               Founded in 2024 by a dedicated group of high school athletes, CASR emerged from their personal experiences navigating sports injuries, burnout, and mental health challenges associated with competitive athletics. Initially a peer-led initiative, CASR has grown into a nationwide nonprofit organization committed to helping thousands of young athletes recover effectively, prevent future injuries, and develop lasting mental resilience.              </p>
             </motion.div>
@@ -80,12 +81,9 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
+                className="h-[350px]"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1526676037777-05a232554d77?w=800&q=80"
-                  alt="Young Canadian athletes training"
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
+                <ImageCarousel />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -100,12 +98,18 @@ const HomePage = () => {
                  To empower young athletes to thrive physically and mentally, both on and off the field.
                 </p>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                  Our Vision
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  A future where young athletes thrive, free from the fear of injury or burnout.
+                </p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">
                   Our Values
                 </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-start">
                     <svg
-                      className="w-5 h-5 text-red-600 mr-2 mt-1"
+                      className="w-5 h-5 text-[#4e73b2] mr-2 mt-1"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -119,7 +123,7 @@ const HomePage = () => {
                   </li>
                   <li className="flex items-start">
                     <svg
-                      className="w-5 h-5 text-red-600 mr-2 mt-1"
+                      className="w-5 h-5 text-[#4e73b2] mr-2 mt-1"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -133,7 +137,7 @@ const HomePage = () => {
                   </li>
                   <li className="flex items-start">
                     <svg
-                      className="w-5 h-5 text-red-600 mr-2 mt-1"
+                      className="w-5 h-5 text-[#4e73b2] mr-2 mt-1"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -147,7 +151,7 @@ const HomePage = () => {
                   </li>
                   <li className="flex items-start">
                     <svg
-                      className="w-5 h-5 text-red-600 mr-2 mt-1"
+                      className="w-5 h-5 text-[#4e73b2] mr-2 mt-1"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -166,7 +170,7 @@ const HomePage = () => {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-16">
+        <section id="services" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -178,41 +182,13 @@ const HomePage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 Our Services
               </h2>
-              <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+              <div className="w-20 h-1 bg-[#4e73b2] mx-auto mb-6"></div>
               <p className="text-gray-600 max-w-3xl mx-auto">
                 We offer comprehensive support programs designed to help young
                 Canadian athletes excel both in their sport and in life.
               </p>
             </motion.div>
             <ServicesShowcase />
-          </div>
-        </section>
-
-        {/* Blog Preview Section with Link to Full Blog */}
-        <section id="blog-preview" className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                From Our Blog
-              </h2>
-              <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-3xl mx-auto">
-                Check out our latest articles and resources for young Canadian
-                athletes and their families.
-              </p>
-              <Button
-                onClick={navigateToBlog}
-                className="mt-6 bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                Visit Our Blog
-              </Button>
-            </motion.div>
           </div>
         </section>
 
@@ -224,12 +200,12 @@ const HomePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-0"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 Contact Us
               </h2>
-              <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+              <div className="w-20 h-1 bg-[#4e73b2] mx-auto mb-6"></div>
               <p className="text-gray-600 max-w-3xl mx-auto">
                 Have questions or want to learn more about our programs? Get in
                 touch with our team.
@@ -241,23 +217,23 @@ const HomePage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
+      <footer className="bg-[#002a5b] text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">CASR</h3>
-              <p className="text-gray-400">
+              <h3 className="text-xl font-bold mb-4 opacity-80">CASR</h3>
+              <p className="text-white opacity-80">
                 Supporting young Canadian athletes to reach their full potential
                 through comprehensive programs and resources.
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <h4 className="text-lg font-semibold mb-4 opacity-80">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
                   <button
                     onClick={() => scrollToTop()}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white opacity-80 hover:opacity-100 transition-opacity"
                   >
                     Home
                   </button>
@@ -265,7 +241,7 @@ const HomePage = () => {
                 <li>
                   <button
                     onClick={() => scrollToSection("about")}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white opacity-80 hover:opacity-100 transition-opacity"
                   >
                     About Us
                   </button>
@@ -273,7 +249,7 @@ const HomePage = () => {
                 <li>
                   <button
                     onClick={() => scrollToSection("services")}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white opacity-80 hover:opacity-100 transition-opacity"
                   >
                     Services
                   </button>
@@ -281,7 +257,7 @@ const HomePage = () => {
                 <li>
                   <button
                     onClick={navigateToBlog}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white opacity-80 hover:opacity-100 transition-opacity"
                   >
                     Blog
                   </button>
@@ -289,7 +265,7 @@ const HomePage = () => {
                 <li>
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white opacity-80 hover:opacity-100 transition-opacity"
                   >
                     Contact
                   </button>
@@ -297,11 +273,11 @@ const HomePage = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-              <ul className="space-y-2 text-gray-400">
+              <h4 className="text-lg font-semibold mb-4 opacity-80">Contact Info</h4>
+              <ul className="space-y-2">
                 <li className="flex items-start">
                   <svg
-                    className="w-5 h-5 mr-2 mt-1"
+                    className="w-5 h-5 mr-2 mt-1 opacity-80"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -319,11 +295,11 @@ const HomePage = () => {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     ></path>
                   </svg>
-                  <span>123 Sports Avenue, Toronto, ON, Canada</span>
+                  <span className="text-white opacity-80">123 Sports Avenue, Toronto, ON, Canada</span>
                 </li>
                 <li className="flex items-start">
                   <svg
-                    className="w-5 h-5 mr-2 mt-1"
+                    className="w-5 h-5 mr-2 mt-1 opacity-80"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -335,11 +311,11 @@ const HomePage = () => {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     ></path>
                   </svg>
-                  <span>(123) 456-7890</span>
+                  <span className="text-white opacity-80">(647) 939-9982</span>
                 </li>
                 <li className="flex items-start">
                   <svg
-                    className="w-5 h-5 mr-2 mt-1"
+                    className="w-5 h-5 mr-2 mt-1 opacity-80"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -351,16 +327,16 @@ const HomePage = () => {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     ></path>
                   </svg>
-                  <span>info@casr.org</span>
+                  <span className="text-white opacity-80">info@casr.com</span>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+              <h4 className="text-lg font-semibold mb-4 opacity-80">Follow Us</h4>
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <svg
                     className="w-6 h-6"
@@ -372,7 +348,7 @@ const HomePage = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <svg
                     className="w-6 h-6"
@@ -384,7 +360,7 @@ const HomePage = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <svg
                     className="w-6 h-6"
@@ -396,7 +372,7 @@ const HomePage = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <svg
                     className="w-6 h-6"
@@ -409,8 +385,8 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-white opacity-80">
               &copy; {new Date().getFullYear()} CASR - Canadian Athletes Support
               & Resources. All rights reserved.
             </p>
@@ -425,7 +401,7 @@ const HomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-colors z-40"
+          className="fixed bottom-6 right-6 p-3 rounded-full bg-[#4e73b2] text-white shadow-lg hover:bg-[#002a5b] transition-colors z-40"
         >
           <ChevronUp size={24} />
         </motion.button>
