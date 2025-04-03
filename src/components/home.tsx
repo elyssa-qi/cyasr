@@ -6,6 +6,7 @@ import ContactSection from "./ContactSection";
 import { Button } from "./ui/button";
 import { ChevronUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Navigation from "./Navigation";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -48,77 +49,11 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <span className="text-2xl font-bold text-blue-600">CASR</span>
-              <span className="ml-2 text-sm text-gray-600">
-                Canadian Athletes Support & Resources
-              </span>
-            </div>
-            <div className="hidden md:flex space-x-6">
-              <button
-                onClick={() => scrollToTop()}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                About Us
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                Services
-              </button>
-              <button
-                onClick={navigateToBlog}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                Blog
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                Contact
-              </button>
-            </div>
-            <div className="md:hidden">
-              {/* Mobile menu button - simplified for scaffolding */}
-              <Button variant="ghost" size="sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="3" y1="12" x2="21" y2="12"></line>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main Content with padding for fixed navbar */}
+      <Navigation />
       <main className="pt-16">
         {/* Hero Section */}
         <section id="hero">
-          <HeroSection onCTAClick={() => scrollToSection("services")} />
+          <HeroSection onCtaClick={() => scrollToSection("services")} />
         </section>
 
         {/* About Us Section */}
@@ -136,11 +71,7 @@ const HomePage = () => {
               </h2>
               <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
               <p className="text-gray-600 max-w-3xl mx-auto">
-                CASR (Canadian Athletes Support & Resources) is dedicated to
-                empowering young Canadian athletes to reach their full potential
-                through comprehensive support programs, resources, and community
-                engagement.
-              </p>
+              Founded in 2024 by a dedicated group of high school athletes, CASR emerged from their personal experiences navigating sports injuries, burnout, and mental health challenges associated with competitive athletics. Initially a peer-led initiative, CASR has grown into a nationwide nonprofit organization committed to helping thousands of young athletes recover effectively, prevent future injuries, and develop lasting mental resilience.              </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -166,11 +97,7 @@ const HomePage = () => {
                   Our Mission
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  We believe every young Canadian athlete deserves the
-                  opportunity to excel in their chosen sport, regardless of
-                  background or circumstances. Our mission is to provide the
-                  resources, mentorship, and support needed to help them achieve
-                  their dreams.
+                 To empower young athletes to thrive physically and mentally, both on and off the field.
                 </p>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
                   Our Values
