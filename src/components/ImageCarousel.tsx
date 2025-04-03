@@ -11,7 +11,6 @@ import volleyball from '../designs/volleyball.jpg';
 
 const images = [
   { src: basketball, alt: 'Basketball players in action' },
-  { src: biking, alt: 'Cyclist on a track' },
   { src: runner, alt: 'Runner in motion' },
   { src: running, alt: 'Athletes running' },
   { src: skiing, alt: 'Skier on slopes' },

@@ -39,13 +39,22 @@ const HomePage = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const offset = 60; // Same offset as navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
   // Navigate to blog page
   const navigateToBlog = () => {
     navigate("/blog");
+    // Ensure we're at the top of the blog page
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -183,10 +192,6 @@ const HomePage = () => {
                 Our Services
               </h2>
               <div className="w-20 h-1 bg-[#4e73b2] mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-3xl mx-auto">
-                We offer comprehensive support programs designed to help young
-                Canadian athletes excel both in their sport and in life.
-              </p>
             </motion.div>
             <ServicesShowcase />
           </div>

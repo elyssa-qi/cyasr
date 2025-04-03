@@ -118,7 +118,7 @@ const Navigation = () => {
                   navigate("/");
                 }
               }}
-              className="text-2xl font-bold text-[#4e73b2]"
+              className="text-2xl font-bold bg-gradient-to-r from-[#1e4883] via-[#4e73b2] to-[#c58dc9] text-transparent bg-clip-text"
             >
               CASR
             </button>

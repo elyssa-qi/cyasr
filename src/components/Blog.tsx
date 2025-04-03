@@ -5,6 +5,7 @@ import Navigation from "./Navigation";
 import nutritionImg from "../designs/nutrition.jpg";
 import concussionImg from "../designs/concussion.jpg";
 import hurdleImg from "../designs/hurdle.jpg";
+import { useNavigate } from "react-router-dom";
 
 interface BlogPost {
   id: number;
@@ -13,11 +14,17 @@ interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
+  slug: string;
 }
 
 const Blog = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
+
+  const navigateToArticle = (slug: string) => {
+    navigate(`/blog/${slug}`);
+  };
 
   // Calculate the posts to show on current page
   const indexOfLastPost = currentPage * postsPerPage;
@@ -55,7 +62,10 @@ const Blog = () => {
                     Discover five simple strategies to help young athletes prevent common injuries, stay healthy, and build the foundation they need to safely reach their athletic potential.
                   </p>
                   <div>
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                    <Button 
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      onClick={() => navigateToArticle("top-5-injury-prevention-tips")}
+                    >
                       Read Full Article
                     </Button>
                   </div>
@@ -96,6 +106,7 @@ const Blog = () => {
                     <Button
                       variant="outline"
                       className="text-blue-600 border-blue-600 hover:bg-blue-50"
+                      onClick={() => navigateToArticle(post.slug)}
                     >
                       Read More
                     </Button>
@@ -181,6 +192,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Proper nutrition helps young athletes prevent injuries, recover faster, and perform at their best by fueling both their bodies and long-term success.",
     date: "February 12, 2025",
+    slug: "role-of-nutrition-in-injury-prevention"
   },
   {
     id: 2,
@@ -190,6 +202,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Concussions are a serious risk in youth sports, making education and early action essential. Recognizing symptoms, responding quickly, and allowing proper recovery can protect young athletes and promote long-term brain health.",
     date: "February 12, 2025",
+    slug: "understanding-concussions"
   },
   {
     id: 3,
@@ -200,6 +213,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Discover five simple strategies to help young athletes prevent common injuries, stay healthy, and build the foundation they need to safely reach their athletic potential.",
     date: "February 12, 2025",
+    slug: "top-5-injury-prevention-tips"
   },
   {
     id: 4,
@@ -209,6 +223,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Resilience is just as important as skill in youth sports. By embracing failure, developing a growth mindset, and supporting mental health, young athletes can build the confidence and strength they need to thrive both on and off the field.",
     date: "February 10, 2025",
+    slug: "mental-game-building-resilience"
   },
 ];
 

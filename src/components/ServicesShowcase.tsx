@@ -50,22 +50,24 @@ const ServiceCard = ({
           transition={{ duration: 0.3 }}
           className="cursor-pointer"
         >
-          <Card className="h-full bg-white border-2 border-gray-100 hover:border-[#4e73b2]">
+          <Card className="h-full min-h-[500px] bg-white border-2 border-gray-100 hover:border-[#4e73b2] p-8 flex flex-col">
             <CardHeader>
-              <div className="flex justify-center mb-4 text-[#4e73b2]">
-                {icon}
+              <div className="flex justify-center mb-6">
+                <div className="bg-gradient-to-r from-[#1e4883] via-[#4e73b2] to-[#c58dc9] p-4 rounded-full">
+                  {React.cloneElement(icon as React.ReactElement, { size: 60, className: "text-white" })}
+                </div>
               </div>
-              <CardTitle className="text-center text-xl">{title}</CardTitle>
+              <CardTitle className="text-center text-2xl font-bold mb-4">{title}</CardTitle>
             </CardHeader>
-            <CardContent>
-              <CardDescription className="text-center">
+            <CardContent className="flex-grow">
+              <CardDescription className="text-center text-lg text-gray-600">
                 {description}
               </CardDescription>
             </CardContent>
             <CardFooter className="flex justify-center">
               <Button
                 variant="outline"
-                className="text-[#4e73b2] border-[#4e73b2] hover:bg-[#4e73b2]/10 hover:text-[#4e73b2]"
+                className="text-[#4e73b2] border-[#4e73b2] hover:bg-[#4e73b2]/10 hover:text-[#4e73b2] text-lg px-8 py-6"
               >
                 Learn More
               </Button>
@@ -98,7 +100,7 @@ const ServiceCard = ({
 const ServicesShowcase = () => {
   const services: ServiceCardProps[] = [
     {
-      icon: <Shield size={40} />,
+      icon: <Shield size={60} />,
       title: "Injury Prevention and Education",
       description:
         "Comprehensive programs to help athletes prevent injuries through training and education.",
@@ -111,7 +113,7 @@ const ServicesShowcase = () => {
       ].join("\n"),
     },
     {
-      icon: <Brain size={40} />,
+      icon: <Brain size={60} />,
       title: "Mental Health and Resilience Building",
       description:
         "Support programs to help athletes develop mental toughness and maintain psychological well-being.",
@@ -125,7 +127,7 @@ const ServicesShowcase = () => {
       ].join("\n"),
     },
     {
-      icon: <HeartPulse size={40} />,
+      icon: <HeartPulse size={60} />,
       title: "Rehabilitation and Recovery",
       description:
         "Professional guidance and support for athletes recovering from injuries and returning to sport.",
@@ -140,14 +142,14 @@ const ServicesShowcase = () => {
   ];
 
   return (
-    <section id="services" className="py-16 bg-gray-50">
+    <section id="services" className="py-8 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
         >
           {services.map((service, index) => (
             <motion.div
