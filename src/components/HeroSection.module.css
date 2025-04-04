@@ -1,0 +1,104 @@
+.heroTitle {
+  font-size: 320px !important;
+  font-weight: bold !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1 !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.runningWoman {
+  position: absolute !important;
+  bottom: -11% !important;
+  left: 11% !important;
+  transform: translate(-50%, -50%) !important;
+  height: 120% !important;
+  width: auto !important;
+  z-index: 10 !important;
+}
+
+.tagline {
+  text-align: right !important;
+  margin-top: -2rem !important;
+  padding-right: 4rem !important;
+  font-size: 2.25rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  letter-spacing: 0.025em !important;
+  font-weight: 600 !important;
+}
+
+/* Large screens down to medium (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 240px !important;
+  }
+  
+  .runningWoman {
+    height: 110% !important;
+    bottom: -10% !important;
+  }
+  
+  .tagline {
+    font-size: 2rem !important;
+    margin-top: -1.75rem !important;
+    padding-right: 3.5rem !important;
+  }
+}
+
+/* Medium screens down to small (max-width: 768px) */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 160px !important;
+  }
+  
+  .runningWoman {
+    height: 90% !important;
+    bottom: -8% !important;
+    left: 13% !important;
+  }
+  
+  .tagline {
+    text-align: right !important;
+    margin-top: -1.5rem !important;
+    padding-right: 2.5rem !important;
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Small screens (max-width: 640px) */
+@media (max-width: 640px) {
+  .heroTitle {
+    font-size: 120px !important;
+  }
+  
+  .runningWoman {
+    height: 80% !important;
+    bottom: -5% !important;
+    left: 15% !important;
+  }
+  
+  .tagline {
+    text-align: right !important;
+    margin-top: 2rem !important;
+    padding-right: 2rem !important;
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Extra small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 90px !important;
+  }
+  
+  .runningWoman {
+    height: 70% !important;
+    bottom: -3% !important;
+  }
+  
+  .tagline {
+    font-size: 1.25rem !important;
+    margin-top: -1rem !important;
+  }
+} 
