@@ -5,6 +5,11 @@ import Navigation from "./Navigation";
 import nutritionImg from "../designs/nutrition.jpg";
 import concussionImg from "../designs/concussion.jpg";
 import hurdleImg from "../designs/hurdle.jpg";
+import noka from "../designs/noka.jpg";
+import nut from "../designs/nutritionn.jpg"
+import burnout from "../designs/burnout.jpg"
+import studentburnout from "../designs/studentathlete.jpg"
+import hurdles from "../designs/hurdles.jpg"
 import { useNavigate } from "react-router-dom";
 
 interface BlogPost {
@@ -122,7 +127,7 @@ const Blog = () => {
                   variant="outline"
                   className="border-gray-300 text-gray-600"
                   disabled={currentPage === 1}
-                  onClick={() => handlePageChange(1)}
+                  onClick={() => handlePageChange(currentPage - 1)}
                 >
                   Previous
                 </Button>
@@ -142,9 +147,16 @@ const Blog = () => {
                 </Button>
                 <Button
                   variant="outline"
+                  className={currentPage === 3 ? "bg-[#4e73b2] text-white" : "border-gray-300 text-gray-600"}
+                  onClick={() => handlePageChange(3)}
+                >
+                  3
+                </Button>
+                <Button
+                  variant="outline"
                   className="border-gray-300 text-gray-600"
-                  disabled={currentPage === 2}
-                  onClick={() => handlePageChange(2)}
+                  disabled={currentPage === 3}
+                  onClick={() => handlePageChange(currentPage + 1)}
                 >
                   Next
                 </Button>
@@ -224,6 +236,56 @@ const blogPosts: BlogPost[] = [
       "Resilience is just as important as skill in youth sports. By embracing failure, developing a growth mindset, and supporting mental health, young athletes can build the confidence and strength they need to thrive both on and off the field.",
     date: "February 10, 2025",
     slug: "mental-game-building-resilience"
+  },
+  {
+    id: 5,
+    image: noka,
+    category: "HEALTH & SAFETY",
+    title: "Why the Right Sports Shoes Matter More Than You Think",
+    excerpt:
+      "The right sports shoes do more than provide comfort — they protect your body, boost performance, and prevent injuries. Whether you're a competitive athlete or a casual player, choosing footwear designed for your sport is essential for staying safe, confident, and at your best.",
+    date: "April 22, 2025",
+    slug: "the-right-sports-shoes-matter"
+  },
+  {
+    id: 6,
+    image: nut,
+    category: "NUTRITION",
+    title: "The Importance of Nutrition in Recovery",
+    excerpt:
+      "A healthy diet is crucial for recovery, providing the nutrients your body needs to heal, reduce inflammation, and rebuild strength.",
+    date: "April 22, 2025",
+    slug: "importance-of-nutrition-in-recovery"
+  },
+  {
+    id: 7,
+    image: burnout,
+    category: "MENTAL HEALTH",
+    title: "Athlete Burnout: What It Is and How to Treat It",
+    excerpt:
+      "Athlete burnout is a physical and psychological condition caused by prolonged, intense sports-related stress, leading to exhaustion, detachment, and declining performance. Without proper recovery and support, it can be as damaging as a serious injury, making early recognition and prevention essential for long-term athletic health.",
+    date: "April 21, 2025",
+    slug: "athlete-burnout"
+  },
+  {
+    id: 8,
+    image: studentburnout,
+    category: "PERSONAL",
+    title: "How Being a Student-Athlete Shapes My Identity",
+    excerpt:
+      "Sports play a very important role in shaping student athletes, as they can boost their physical ability and can increase their overall adaptability to challenging situations. Although sports provide many benefits to student athletes, they can also impact their amount of rest,and can cause ongoing stress from balancing their education with their sports.",
+    date: "April 21, 2025",
+    slug: "how-being-a-student-athlete-shapes-my-identity"
+  },
+  {
+    id: 9,
+    image: hurdles,
+    category: "MENTAL HEALTH",
+    title: "Mental Blocks in Sports—the “What Ifs”",
+    excerpt:
+      "Many athletes face mental challenges during high-pressure moments, driven by fear of failure and judgment. This article explores common in-game anxieties and offers practical strategies—like positive self-talk, staying present, and deep breathing—to stay focused and perform with confidence.",
+    date: "April 21, 2025",
+    slug: "mental-blocks-in-sports"
   },
 ];
 
