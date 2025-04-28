@@ -5,12 +5,6 @@ import Navigation from "./Navigation";
 const OurTeam = () => {
   const teamMembers = [
     {
-      name: "Evelyn Su",
-      role: "Sports Medicine Specialist",
-      image: "https://via.placeholder.com/400x400/4e73b2/ffffff?text=Emily+Su",
-      bio: "Hi! I’m Jessica Lee, a grade 8 student at the University of Toronto Schools in Toronto, Canada. I absolutely LOVE sports, and I play rep volleyball and tackle football. I want to help other kids like me stay injury free, and healthy both mentally and physically. Outside of sports, I'm also a science enthusiast as well as a speedcuber.",
-    },
-    {
       name: "Jessica Lee",
       role: "Sports Medicine Specialist",
       image: "https://via.placeholder.com/400x400/4e73b2/ffffff?text=Emily+Su",
@@ -45,6 +39,12 @@ const OurTeam = () => {
       role: "Certified Athletic Trainer",
       image: "https://via.placeholder.com/400x400/4e73b2/ffffff?text=Ethan+Li",
       bio: "Hi! I’m Miya Gao, a grade 9 student at University of Toronto Schools based in Toronto, Canada. After personally experiencing burnout and other mental challenges, I’ve become passionate about helping others, especially when it comes to athletics. I love playing basketball and soccer, and in my free time, you can find me curled up with a good book.",
+    },
+    {
+      name: "Evelyn Su",
+      role: "Sports Medicine Specialist",
+      image: "https://via.placeholder.com/400x400/4e73b2/ffffff?text=Emily+Su",
+      bio: "Hi! I’m Jessica Lee, a grade 8 student at the University of Toronto Schools in Toronto, Canada. I absolutely LOVE sports, and I play rep volleyball and tackle football. I want to help other kids like me stay injury free, and healthy both mentally and physically. Outside of sports, I'm also a science enthusiast as well as a speedcuber.",
     },
   ];
 

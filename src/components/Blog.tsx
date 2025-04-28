@@ -131,27 +131,16 @@ const Blog = () => {
                 >
                   Previous
                 </Button>
-                <Button 
-                  variant={currentPage === 1 ? undefined : "outline"}
-                  className={currentPage === 1 ? "bg-[#4e73b2] text-white" : "border-gray-300 text-gray-600"}
-                  onClick={() => handlePageChange(1)}
-                >
-                  1
-                </Button>
-                <Button
-                  variant="outline"
-                  className={currentPage === 2 ? "bg-[#4e73b2] text-white" : "border-gray-300 text-gray-600"}
-                  onClick={() => handlePageChange(2)}
-                >
-                  2
-                </Button>
-                <Button
-                  variant="outline"
-                  className={currentPage === 3 ? "bg-[#4e73b2] text-white" : "border-gray-300 text-gray-600"}
-                  onClick={() => handlePageChange(3)}
-                >
-                  3
-                </Button>
+                {[1, 2, 3].map(page => (
+                  <Button
+                    key={page}
+                    className={`px-4 py-2 rounded border 
+                      ${currentPage === page ? 'bg-[#002a5b] text-white border-[#002a5b]' : 'bg-white !text-gray-600 border-gray-200 hover:bg-gray-100'}`}
+                    onClick={() => handlePageChange(page)}
+                  >
+                    {page}
+                  </Button>
+                ))}
                 <Button
                   variant="outline"
                   className="border-gray-300 text-gray-600"

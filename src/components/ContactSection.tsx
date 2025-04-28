@@ -217,7 +217,7 @@ const ContactSection = () => {
             <Card className="shadow-lg overflow-hidden">
               <div className="h-64 bg-slate-200 relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2683070116765!2d-79.38922492346847!3d43.64267905260046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d68bf33a9b%3A0x15edd8c4de1c7581!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1699887654321!5m2!1sen!2sca"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.1234567890123!2d-79.38922492346847!3d43.64267905260046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4c8c1f1d1d1d1%3A0x1d1d1d1d1d1d1d1d!2s513%20Mcnicoll%20Ave%2C%20North%20York%2C%20ON%20M2H%202C9!5e0!3m2!1sen!2sca!4v1699887654321!5m2!1sen!2sca"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -244,7 +244,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium">Main Office</h4>
                     <p className="text-slate-600">
-                      123 Sports Avenue, Toronto, ON M5V 2K1, Canada
+                      513 Mcnicoll Ave, North York, ON M2H 2C9, Canada
                     </p>
                   </div>
                 </div>

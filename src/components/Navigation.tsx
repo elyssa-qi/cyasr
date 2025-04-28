@@ -126,6 +126,8 @@ const Navigation = () => {
       scrollToSection(sectionId);
     } else {
       navigate(path);
+      // Always scroll to top when navigating to a new page
+      window.scrollTo(0, 0);
     }
     setIsMobileMenuOpen(false);
   };
