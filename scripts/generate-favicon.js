@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 const sizes = [16, 32, 48, 64, 128, 256];
 
 async function generateFavicons() {
-  const inputFile = join(__dirname, '../src/designs/casrlogo.png');
+  const inputFile = join(__dirname, '../src/designs/cyasrlogo.png');
   const outputDir = join(__dirname, '../public');
 
   // Generate favicon.ico (multi-size ICO file)

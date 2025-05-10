@@ -6,7 +6,7 @@ import Lucas from "../designs/lucas.png";
 import Jessica from "../designs/jessica.png";
 import Miya from "../designs/miya.png";
 import Eason from "../designs/eason.png";
-import Ashley from "../designs/ashley.png";
+import Ashley from "../designs/ashley.png";   
 import JessicaSong from "../designs/jessicasong.png";
 const OurTeam = () => {
   const teamMembers = [
@@ -14,43 +14,43 @@ const OurTeam = () => {
       name: "Evelyn Su",
       role: "Director, Founder",
       image: Evelyn,
-      bio: "Hi! I’m Evelyn Su, a grade 10 student and competitive fencer. I started the CASR to help other young athletes prevent and recover from sport injuries, inspired by my own experiences in high performance sports. I hope to make a real difference in your athletic journey!",
+      bio: "Hi! I'm Evelyn Su, a grade 10 student and competitive fencer. I started the CYASR to help other young athletes prevent and recover from sport injuries, inspired by my own experiences in high performance sports. I hope to make a real difference in your athletic journey!",
     },
     {
       name: "Lucas Hu",
       role: "Director, Co-Founder",
       image: Lucas,
-      bio: "Nice to meet you! I’m Lucas Hu, a grade 9 student at Bayview Secondary School located in Richmond Hill, Canada. It is difficult to find solutions to the many obstacles we may encounter in our athletic career, but as a competitive fencer, I gain valuable experience in overcoming the challenges I face. I feel motivated to share these lessons and partake in a journey with CASR to inspire other student athletes. My team and I at CASR are committed to helping anyone in need or simply to sharing our experiences with others interested.",
+      bio: "Nice to meet you! I'm Lucas Hu, a grade 9 student at Bayview Secondary School located in Richmond Hill, Canada. It is difficult to find solutions to the many obstacles we may encounter in our athletic career, but as a competitive fencer, I gain valuable experience in overcoming the challenges I face. I feel motivated to share these lessons and partake in a journey with CYASR to inspire other student athletes. My team and I at CYASR are committed to helping anyone in need or simply to sharing our experiences with others interested.",
     },
     {
       name: "Jessica Lee",
       role: "Director, Co-Founder",
       image: Jessica,
-      bio: "Hi! I’m Jessica Lee, a grade 8 student at the University of Toronto Schools in Toronto, Canada. I absolutely LOVE sports, and I play rep volleyball and tackle football. I want to help other kids like me stay injury free, and healthy both mentally and physically. Outside of sports, I'm also a science enthusiast as well as a speedcuber.",
+      bio: "Hi! I'm Jessica Lee, a grade 8 student at the University of Toronto Schools in Toronto, Canada. I absolutely LOVE sports, and I play rep volleyball and tackle football. I want to help other kids like me stay injury free, and healthy both mentally and physically. Outside of sports, I'm also a science enthusiast as well as a speedcuber.",
     },
     {
       name: "Jessica Song",
       role: "Event Manager",
       image: JessicaSong,
-      bio: "Hi! My name is Jessica Song, and I’m currently a Grade 11 student at the University of Toronto Schools. I love playing all kinds of sports for fun with my friends, but my personal favourites are table tennis and badminton. Through my own experience, I’ve seen how something as small as wearing the wrong shoes can cause discomfort and affect how you play. I want to help athletes, whether casual or competitive, realize that taking care of your body goes beyond just training hard; it also includes the little things you might not always think about.",
+      bio: "Hi! My name is Jessica Song, and I'm currently a Grade 11 student at the University of Toronto Schools. I love playing all kinds of sports for fun with my friends, but my personal favourites are table tennis and badminton. Through my own experience, I've seen how something as small as wearing the wrong shoes can cause discomfort and affect how you play. I want to help athletes, whether casual or competitive, realize that taking care of your body goes beyond just training hard; it also includes the little things you might not always think about.",
     },
     {
       name: "Miya Gao",
       role: "Editor",
       image: Miya,
-      bio: "Hi! I’m Miya Gao, a grade 9 student at University of Toronto Schools based in Toronto, Canada. After personally experiencing burnout and other mental challenges, I’ve become passionate about helping others, especially when it comes to athletics. I love playing basketball and soccer, and in my free time, you can find me curled up with a good book.",
+      bio: "Hi! I'm Miya Gao, a grade 9 student at University of Toronto Schools based in Toronto, Canada. After personally experiencing burnout and other mental challenges, I've become passionate about helping others, especially when it comes to athletics. I love playing basketball and soccer, and in my free time, you can find me curled up with a good book.",
     },
     {
       name: "Eason Du",
       role: "Tech Coordinator",
       image: Eason,
-      bio: "Hi! I’m Eason, a Grade 9 student at University of Toronto Schools. Competitive swimming has been a significant part of my life for many years. My journey in the sport inspired me to help athletes understand that recovery is an essential part of the process and that injury doesn't mean the end of their journey. Having experienced the frustration of being sidelined due to injury myself, I’m passionate about supporting others through their own challenges. Outside of swimming, I enjoy playing basketball and reading.",
+      bio: "Hi! I'm Eason, a Grade 9 student at University of Toronto Schools. Competitive swimming has been a significant part of my life for many years. My journey in the sport inspired me to help athletes understand that recovery is an essential part of the process and that injury doesn't mean the end of their journey. Having experienced the frustration of being sidelined due to injury myself, I'm passionate about supporting others through their own challenges. Outside of swimming, I enjoy playing basketball and reading.",
     },
     {
       name: "Ashley Ma",
       role: "Marketing Manager",
-      image: "https://via.placeholder.com/400x400/4e73b2/ffffff?text=Ethan+Li",
-      bio: "Hi! I’m Ashley Ma, a grade 10 student in the IB program at Bayview Secondary School! Over the course of my athletic journey, I’ve done dance, individual rhythmic gymnastics (RGI), and aesthetic group gymnastics (AGG). I want to bring more awareness to the mental aspect of sports, and its relation to injuries and burnout.",
+      image: Ashley,
+      bio: "Hi! I'm Ashley Ma, a grade 10 student in the IB program at Bayview Secondary School! Over the course of my athletic journey, I've done dance, individual rhythmic gymnastics (RGI), and aesthetic group gymnastics (AGG). I want to bring more awareness to the mental aspect of sports, and its relation to injuries and burnout.",
     },
   ];
 

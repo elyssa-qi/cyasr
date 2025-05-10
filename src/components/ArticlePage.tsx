@@ -70,7 +70,7 @@ const ArticlePage: React.FC = () => {
             <li><strong>Avoid Processed Foods</strong>: Limit sugary snacks and processed foods, which can increase inflammation and hinder recovery.</li>
           </ul>
 
-          <p className="mt-6">Nutrition is a powerful tool for injury prevention and recovery. By fueling their bodies with the right nutrients, young athletes can stay strong, recover faster, and perform at their best. At CASR, we emphasize the importance of nutrition as part of a holistic approach to athlete well-being.</p>
+          <p className="mt-6">Nutrition is a powerful tool for injury prevention and recovery. By fueling their bodies with the right nutrients, young athletes can stay strong, recover faster, and perform at their best. At CYASR, we emphasize the importance of nutrition as part of a holistic approach to athlete well-being.</p>
           <p>Let's work together to keep young athletes healthy, active, and thriving!</p>
         </>
       ),

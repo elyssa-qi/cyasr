@@ -44,7 +44,7 @@ const ImageGallery = ({ stories = defaultStories }: ImageGalleryProps) => {
           <h2 className="text-3xl font-bold mb-2">Success Stories</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Meet the young Canadian athletes who have achieved their dreams with
-            CASR's support
+            CYASR's support
           </p>
           <div className="relative w-16 h-16 mx-auto mt-4">
             <svg
@@ -192,7 +192,7 @@ const defaultStories: SuccessStory[] = [
       "https://images.unsplash.com/photo-1526676037777-05a232554f77?w=800&q=80",
     title: "Sarah Thompson - Junior Hockey Champion",
     description:
-      "Sarah Thompson from Vancouver started playing hockey at age 6. With CASR's support, she received specialized coaching and equipment that her family couldn't afford. Today, at 16, she's the youngest player on Canada's Junior National Women's Hockey team and dreams of Olympic gold. CASR provided not just financial assistance but mentorship from former Olympians who guided her development both on and off the ice. Sarah now volunteers with younger players, passing on what she's learned to the next generation of Canadian hockey talent.",
+      "Sarah Thompson from Vancouver started playing hockey at age 6. With CYASR's support, she received specialized coaching and equipment that her family couldn't afford. Today, at 16, she's the youngest player on Canada's Junior National Women's Hockey team and dreams of Olympic gold. CYASR provided not just financial assistance but mentorship from former Olympians who guided her development both on and off the ice. Sarah now volunteers with younger players, passing on what she's learned to the next generation of Canadian hockey talent.",
   },
   {
     id: 2,
@@ -200,7 +200,7 @@ const defaultStories: SuccessStory[] = [
       "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
     title: "Marcus Chen - Track & Field Prodigy",
     description:
-      "Marcus Chen from Toronto discovered his passion for running at age 10. Despite his natural talent, his family struggled to afford competition fees and travel expenses. CASR stepped in with a comprehensive support package, including coaching, equipment, and travel assistance. Now 17, Marcus holds three national junior records in sprinting events and represented Canada at the World Youth Championships. CASR's mental performance coaching helped him overcome performance anxiety and develop the confidence needed to compete at the highest levels. Marcus is now on track for a university athletic scholarship.",
+      "Marcus Chen from Toronto discovered his passion for running at age 10. Despite his natural talent, his family struggled to afford competition fees and travel expenses. CYASR stepped in with a comprehensive support package, including coaching, equipment, and travel assistance. Now 17, Marcus holds three national junior records in sprinting events and represented Canada at the World Youth Championships. CYASR's mental performance coaching helped him overcome performance anxiety and develop the confidence needed to compete at the highest levels. Marcus is now on track for a university athletic scholarship.",
   },
   {
     id: 3,
@@ -208,7 +208,7 @@ const defaultStories: SuccessStory[] = [
       "https://images.unsplash.com/photo-1535469420027-517674dad7a1?w=800&q=80",
     title: "Emma Lafleur - Rising Basketball Star",
     description:
-      "Emma Lafleur from Montreal showed exceptional basketball skills from an early age, but opportunities for development were limited in her neighborhood. CASR provided access to elite training camps, skill development programs, and academic support to help her balance sports and education. At 15, Emma was selected for Quebec's provincial team and caught the attention of national scouts. CASR's nutrition and strength training programs helped her develop physically to compete against older players. Emma credits CASR's holistic approach for helping her grow as both an athlete and a student.",
+      "Emma Lafleur from Montreal showed exceptional basketball skills from an early age, but opportunities for development were limited in her neighborhood. CYASR provided access to elite training camps, skill development programs, and academic support to help her balance sports and education. At 15, Emma was selected for Quebec's provincial team and caught the attention of national scouts. CYASR's nutrition and strength training programs helped her develop physically to compete against older players. Emma credits CYASR's holistic approach for helping her grow as both an athlete and a student.",
   },
   {
     id: 4,
@@ -216,7 +216,7 @@ const defaultStories: SuccessStory[] = [
       "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80",
     title: "Jordan Wilson - Swimming Champion",
     description:
-      "Jordan Wilson from Halifax faced significant challenges accessing quality swimming facilities and coaching. CASR provided pool time, expert coaching, and transportation assistance to help Jordan pursue his swimming dreams. After two years with CASR's support, Jordan qualified for the Canadian Junior Swimming Championships and won two gold medals in freestyle events. CASR's sports psychology services helped him develop the mental toughness needed for competitive swimming. Now 16, Jordan is working toward qualifying for senior national competitions with his sights set on international representation.",
+      "Jordan Wilson from Halifax faced significant challenges accessing quality swimming facilities and coaching. CYASR provided pool time, expert coaching, and transportation assistance to help Jordan pursue his swimming dreams. After two years with CYASR's support, Jordan qualified for the Canadian Junior Swimming Championships and won two gold medals in freestyle events. CYASR's sports psychology services helped him develop the mental toughness needed for competitive swimming. Now 16, Jordan is working toward qualifying for senior national competitions with his sights set on international representation.",
   },
   {
     id: 5,
@@ -224,7 +224,7 @@ const defaultStories: SuccessStory[] = [
       "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&q=80",
     title: "Olivia Singh - Gymnastics Medalist",
     description:
-      "Olivia Singh from Edmonton showed extraordinary flexibility and strength at age 7, but her family couldn't afford the intensive training gymnastics requires. CASR provided a comprehensive scholarship covering coaching, facility access, competition fees, and specialized equipment. Now 14, Olivia has won multiple medals at national competitions and is training with Olympic-level coaches. CASR's injury prevention program has helped her stay healthy despite the physical demands of elite gymnastics. Olivia's story has inspired many young girls in her community to pursue their athletic dreams regardless of financial circumstances.",
+      "Olivia Singh from Edmonton showed extraordinary flexibility and strength at age 7, but her family couldn't afford the intensive training gymnastics requires. CYASR provided a comprehensive scholarship covering coaching, facility access, competition fees, and specialized equipment. Now 14, Olivia has won multiple medals at national competitions and is training with Olympic-level coaches. CYASR's injury prevention program has helped her stay healthy despite the physical demands of elite gymnastics. Olivia's story has inspired many young girls in her community to pursue their athletic dreams regardless of financial circumstances.",
   },
   {
     id: 6,
@@ -232,7 +232,7 @@ const defaultStories: SuccessStory[] = [
       "https://images.unsplash.com/photo-1565992441121-4367c2967103?w=800&q=80",
     title: "Noah Tremblay - Soccer Prodigy",
     description:
-      "Noah Tremblay from Winnipeg showed exceptional soccer skills playing in local parks, but organized leagues and development programs were financially out of reach. CASR provided league fees, equipment, and access to elite development camps. Their transportation assistance ensured Noah could attend practices and games across the city. At 15, Noah was selected for a provincial all-star team and participated in national showcase tournaments. CASR's academic support helped him maintain excellent grades while pursuing soccer excellence. Noah hopes to earn a university scholarship and eventually represent Canada internationally.",
+      "Noah Tremblay from Winnipeg showed exceptional soccer skills playing in local parks, but organized leagues and development programs were financially out of reach. CYASR provided league fees, equipment, and access to elite development camps. Their transportation assistance ensured Noah could attend practices and games across the city. At 15, Noah was selected for a provincial all-star team and participated in national showcase tournaments. CYASR's academic support helped him maintain excellent grades while pursuing soccer excellence. Noah hopes to earn a university scholarship and eventually represent Canada internationally.",
   },
 ];
 

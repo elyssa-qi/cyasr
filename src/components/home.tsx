@@ -84,7 +84,7 @@ const HomePage = () => {
               </div>
               <div className="max-w-[50rem] mx-auto">
                 <p className="text-gray-600 text-center">
-                 Canadian Athletes Support and Resources (CASR) was founded in 2024 by a group of high school student-athletes passionate about preventing sport-related injuries, burnout and mental health challenges. We have grown to become a nationwide nonprofit dedicated to supporting young athletes in their physical and emotional recovery. CASR equips young athletes with the resources to prevent injuries, manage stress, and build lasting resilience. Through educational programs, community support, and advocacy, CASR helps athletes navigate the pressures of competitive athletics while promoting holistic well-being. Our mission remains rooted in the belief that every athlete deserves the tools to thrive both on and off the field.
+                 Canadian Youth Athletic Support and Rehabilitation Society (CYASR) was founded in 2024 by a group of high school student-athletes passionate about preventing sport-related injuries, burnout and mental health challenges. We have grown to become a nationwide nonprofit dedicated to supporting young athletes in their physical and emotional recovery. CYASR equips young athletes with the resources to prevent injuries, manage stress, and build lasting resilience. Through educational programs, community support, and advocacy, CYASR helps athletes navigate the pressures of competitive athletics while promoting holistic well-being. Our mission remains rooted in the belief that every athlete deserves the tools to thrive both on and off the field.
                 </p>
               </div>
             </motion.div>
@@ -112,7 +112,7 @@ const HomePage = () => {
                     Our Mission
                   </h3>
                   <p className="text-gray-600 mb-4">
-                  CASR is dedicated to empowering young athletes by providing comprehensive support for injury recovery, injury prevention, and mental health. Through education, advocacy, and community-driven initiatives, we strive to create a healthier, more sustainable path for youth in competitive sports—ensuring every athlete has the tools to thrive both on and off the field.
+                  CYASR is dedicated to empowering young athletes by providing comprehensive support for injury recovery, injury prevention, and mental health. Through education, advocacy, and community-driven initiatives, we strive to create a healthier, more sustainable path for youth in competitive sports—ensuring every athlete has the tools to thrive both on and off the field.
                   </p>
                   <h3 className="text-2xl font-bold text-gray-800 mb-4">
                     Our Vision
@@ -174,7 +174,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 opacity-80">CASR</h3>
+              <h3 className="text-xl font-bold mb-4 opacity-80">CYASR</h3>
               <p className="text-white opacity-80">
                 Supporting young Canadian athletes to reach their full potential
                 through comprehensive programs and resources.
@@ -280,7 +280,7 @@ const HomePage = () => {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     ></path>
                   </svg>
-                  <span className="text-white opacity-80">info@casr.com</span>
+                  <span className="text-white opacity-80">info@cyasr.com</span>
                 </li>
               </ul>
             </div>
@@ -340,8 +340,7 @@ const HomePage = () => {
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
             <p className="text-white opacity-80">
-              &copy; {new Date().getFullYear()} CASR - Canadian Athletes Support
-              & Resources. All rights reserved.
+              &copy; {new Date().getFullYear()} CYASR - Canadian Youth Athletic Support and Rehabilitation Society. All rights reserved.
             </p>
           </div>
         </div>

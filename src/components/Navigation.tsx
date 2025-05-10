@@ -141,7 +141,7 @@ const Navigation = () => {
               onClick={() => navigate("/")}
               className="text-2xl font-bold bg-gradient-to-r from-[#4e73b2] via-[#9b4dca] to-[#002a5b] bg-clip-text text-transparent"
             >
-              CASR
+              CYASR
             </button>
           </div>
 

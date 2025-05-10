@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick = () => {} }) => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-[200px] md:text-[300px] lg:text-[320px] font-bold text-white/80 tracking-tight leading-none w-full text-center"
             >
-              CASR
+              CYASR
             </motion.h1>
             {/* Running Woman */}
             <motion.img
@@ -43,7 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick = () => {} }) => {
                 delay: 0.6,
                 duration: 1 
               }}
-              className="absolute bottom-[-11%] left-[11%] transform -translate-y-1/2 -translate-x-1/2 h-[120%] w-auto z-10"
+              className="absolute bottom-[-11%] left-[18%] transform -translate-y-1/2 -translate-x-1/2 h-[120%] w-auto z-10"
             />
           </div>
           <motion.p

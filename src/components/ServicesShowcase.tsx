@@ -87,7 +87,7 @@ const ServiceCard = ({
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <p className="text-sm text-gray-600">
-            At CASR, we're committed to providing comprehensive support for
+            At CYASR, we're committed to providing comprehensive support for
             young Canadian athletes. Contact us today to learn more about how we
             can help your athletic journey.
           </p>
@@ -105,7 +105,7 @@ const ServicesShowcase = () => {
       description:
         "Comprehensive programs to help athletes prevent injuries through training and education.",
       detailedDescription: [
-        "At CASR, we prioritize keeping young athletes safe and informed. Our Injury Prevention and Education programs include:",
+        "At CYASR, we prioritize keeping young athletes safe and informed. Our Injury Prevention and Education programs include:",
         "",
         "• Community Events",
         "• Workshops",
