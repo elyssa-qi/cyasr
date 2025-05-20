@@ -36,7 +36,7 @@ const OurTeam = () => {
     },
     {
       name: "Miya Gao",
-      role: "Editor",
+      role: "Editor-in-Chief",
       image: Miya,
       bio: "Hi! I'm Miya Gao, a grade 9 student at University of Toronto Schools based in Toronto, Canada. After personally experiencing burnout and other mental challenges, I've become passionate about helping others, especially when it comes to athletics. I love playing basketball and soccer, and in my free time, you can find me curled up with a good book.",
     },
