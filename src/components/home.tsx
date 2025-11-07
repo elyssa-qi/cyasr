@@ -57,6 +57,13 @@ const HomePage = () => {
     window.scrollTo(0, 0);
   };
 
+  // Navigate to events page
+  const navigateToEvents = () => {
+    navigate("/events");
+    // Ensure we're at the top of the events page
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -213,6 +220,14 @@ const HomePage = () => {
                     className="text-white opacity-80 hover:opacity-100 transition-opacity"
                   >
                     Blog
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={navigateToEvents}
+                    className="text-white opacity-80 hover:opacity-100 transition-opacity"
+                  >
+                    Events
                   </button>
                 </li>
                 <li>

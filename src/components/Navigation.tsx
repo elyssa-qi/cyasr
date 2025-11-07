@@ -18,7 +18,8 @@ const Navigation = () => {
       ]
     },
     { name: "Services", path: "/#services" },
-    { name: "Blog", path: "/blog" },
+    { name: "Events", path: "/events" },
+    { name: "Blog", path: "/blog"},
     { name: "Contact", path: "/#contact" },
   ];
 
@@ -68,6 +69,8 @@ const Navigation = () => {
   useEffect(() => {
     if (location.pathname === "/blog") {
       setActiveSection("blog");
+    } else if (location.pathname === "/events") {
+      setActiveSection("events");
     } else if (location.pathname === "/") {
       // Trigger a scroll check to set the correct section
       const scrollPosition = window.scrollY;
@@ -117,6 +120,11 @@ const Navigation = () => {
 
   const navigateToBlog = () => {
     navigate("/blog");
+    window.scrollTo(0, 0);
+  };
+
+  const navigateToEvents = () => {
+    navigate("/events");
     window.scrollTo(0, 0);
   };
 
