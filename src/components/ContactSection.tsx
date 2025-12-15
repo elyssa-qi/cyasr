@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import emailjs from "@emailjs/browser";
 import {
   Card,
   CardContent,
@@ -18,6 +19,7 @@ interface FormData {
   email: string;
   subject: string;
   message: string;
+  company: string; //honeypot
 }
 
 interface FormErrors {
@@ -25,6 +27,7 @@ interface FormErrors {
   email?: string;
   subject?: string;
   message?: string;
+  company?: string;
 }
 
 const ContactSection = () => {
@@ -33,12 +36,16 @@ const ContactSection = () => {
     email: "",
     subject: "",
     message: "",
+    company: "",
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [formStart] = useState(Date.now());
+  const [lastKeystroke, setLastKeystroke] = useState<number | null>(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -74,6 +81,11 @@ const ContactSection = () => {
       [name]: value,
     }));
 
+    // Track keystroke time for human behavior detection
+    if (name !== "botField") {
+      setLastKeystroke(Date.now());
+    }
+
     // Clear error when user types
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({
@@ -83,29 +95,88 @@ const ContactSection = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const performBotChecks = (): boolean => {
+    const now = Date.now();
+    
+    // Check 1: Honeypot field (bots often fill all fields)
+    if (formData.company.trim() !== "") {
+      console.warn("Bot detected via honeypot field");
+      return false;
+    }
+    
+    // Check 2: Minimum time spent on form (humans take time)
+    const timeSpent = now - formStart;
+    if (timeSpent < 3000) { // Less than 3 seconds
+      console.warn("Form submitted too quickly");
+      setErrorMessage("Please take a moment to fill out the form properly");
+      return false;
+    }
+    
+    // Check 3: Recent keystroke detection (humans type before submitting)
+    if (!lastKeystroke) {
+      // No keystrokes in last 10 seconds or never typed
+      console.warn("No recent user interaction detected");
+      setErrorMessage("Please interact with the form before submitting");
+      return false;
+    }
+    
+    // Check 4: Form completion time (bots submit instantly)
+    if (timeSpent < 5000 && formData.message.length > 75) {
+      // Typed a long message very quickly
+      console.warn("Suspiciously fast form completion");
+      setErrorMessage("Please ensure all information is correct");
+      return false;
+    }
+    
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      setIsSubmitting(true);
-      setIsError(false);
-
-      // Simulate form submission
+    // Perform anti-bot checks
+    if (!performBotChecks()) {
+      setIsError(true);
       setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
+        setIsError(false);
+        setErrorMessage("");
+      }, 5000);
+      return;
+    }
 
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setIsSuccess(false);
-        }, 5000);
-      }, 1500);
+    if (!validateForm()) return;
+  
+    setIsSubmitting(true);
+    setIsError(false);
+  
+    try {
+      await emailjs.send(
+        "service_ukxgkcm",
+        "template_psfms07",
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "kCq8gqyZAnkxc2Knv"
+      );
+  
+      setIsSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        company: "",
+      });
+  
+      setTimeout(() => setIsSuccess(false), 5000);
+    } catch (error) {
+      console.error(error);
+      setIsError(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -184,7 +255,16 @@ const ContactSection = () => {
                     <p className="text-[#4e73b2] text-sm">{errors.subject}</p>
                   )}
                 </div>
-
+                {/* Honeypot input */}
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                />
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
