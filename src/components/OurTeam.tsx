@@ -8,6 +8,8 @@ import Miya from "../designs/miya.png";
 import Eason from "../designs/eason.png";
 import Ashley from "../designs/ashley.png";   
 import JessicaSong from "../designs/jessicasong.png";
+import Catherine from "../designs/catherine.jpg";
+
 const OurTeam = () => {
   const teamMembers = [
     {
@@ -42,7 +44,7 @@ const OurTeam = () => {
     },
     {
       name: "Eason Du",
-      role: "Tech Coordinator",
+      role: "Technical Director",
       image: Eason,
       bio: "Hi! I'm Eason, part of the Class of 2028 at University of Toronto Schools. Competitive swimming has been a significant part of my life for many years. My journey in the sport inspired me to help athletes understand that recovery is an essential part of the process and that injury doesn't mean the end of their journey. Having experienced the frustration of being sidelined due to injury myself, I'm passionate about supporting others through their own challenges. Outside of swimming, I enjoy playing basketball and reading.",
     },
@@ -51,6 +53,12 @@ const OurTeam = () => {
       role: "Marketing Manager",
       image: Ashley,
       bio: "Hi! I'm Ashley Ma, from the Class of 2027 of the IB program at Bayview Secondary School! Over the course of my athletic journey, I've done dance, individual rhythmic gymnastics (RGI), and aesthetic group gymnastics (AGG). I want to bring more awareness to the mental aspect of sports, and its relation to injuries and burnout.",
+    },
+    {
+      name: "Catherine",
+      role: "Social Media Manager",
+      image: Catherine,
+      bio: "Hi! I'm Catherine, a Grade 10 student at Thornlea Secondary School and a competitive fencer with over seven years of experience. Through my training, I've come to appreciate the importance of both physical care and mental focus in sports. I'm particularly interested in supporting young athletes in preventing injuries and maintaining a healthy balance between athletics and academics.",
     },
   ];
 
