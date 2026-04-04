@@ -55,7 +55,7 @@ const OurTeam = () => {
       bio: "Hi! I'm Ashley Ma, from the Class of 2027 of the IB program at Bayview Secondary School! Over the course of my athletic journey, I've done dance, individual rhythmic gymnastics (RGI), and aesthetic group gymnastics (AGG). I want to bring more awareness to the mental aspect of sports, and its relation to injuries and burnout.",
     },
     {
-      name: "Catherine",
+      name: "Catherine Yang",
       role: "Social Media Manager",
       image: Catherine,
       bio: "Hi! I'm Catherine, a Grade 10 student at Thornlea Secondary School and a competitive fencer with over seven years of experience. Through my training, I've come to appreciate the importance of both physical care and mental focus in sports. I'm particularly interested in supporting young athletes in preventing injuries and maintaining a healthy balance between athletics and academics.",
