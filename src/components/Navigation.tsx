@@ -20,6 +20,7 @@ const Navigation = () => {
     { name: "Services", path: "/#services" },
     { name: "Events", path: "/events" },
     { name: "Blog", path: "/blog"},
+    { name: "Newsletter", path: "/newsletter" },
     { name: "Contact", path: "/#contact" },
   ];
 
@@ -71,6 +72,8 @@ const Navigation = () => {
       setActiveSection("blog");
     } else if (location.pathname === "/events") {
       setActiveSection("events");
+    } else if (location.pathname === "/newsletter") {
+      setActiveSection("newsletter");
     } else if (location.pathname === "/") {
       // Trigger a scroll check to set the correct section
       const scrollPosition = window.scrollY;
@@ -120,6 +123,11 @@ const Navigation = () => {
 
   const navigateToBlog = () => {
     navigate("/blog");
+    window.scrollTo(0, 0);
+  };
+
+  const navigateToNewsletter = () => {
+    navigate("/newsletter");
     window.scrollTo(0, 0);
   };
 

@@ -341,7 +341,7 @@ const ContactSection = () => {
                   <Mail className="h-5 w-5 mr-3 text-[#4e73b2] mt-0.5" />
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-slate-600">info@cyasr.com</p>
+                    <p className="text-slate-600">info@cyasr.org</p>
                   </div>
                 </div>
 

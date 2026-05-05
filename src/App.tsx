@@ -6,6 +6,7 @@ import ArticlePage from "./components/ArticlePage";
 import EventsVideoPage from "./components/EventsVideoPage";
 import OurTeam from "./components/OurTeam";
 import Events from "./components/Events";
+import Newsletter from "./components/Newsletter";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/events/:slug" element={<EventsVideoPage />} />
         <Route path="/our-team" element={<OurTeam />} />
+        <Route path="/newsletter" element={<Newsletter />} />
       </Routes>
     </Suspense>
   );
