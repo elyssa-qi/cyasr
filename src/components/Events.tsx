@@ -32,7 +32,7 @@ interface EventsPost {
       <div className="min-h-screen bg-white">
         <Navigation />
         {/* CYASR at OWFL Provincials */}
-        <section className="py-4 mb-8">
+        <section className="py-4 mt-8">
             <div className="container mx-auto px-4">
               <div className="bg-white rounded-lg shadow-xl overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-[0.43fr_0.57fr] gap-4">
@@ -67,7 +67,7 @@ interface EventsPost {
             </div>
           </section>
           {/* Interview with Grace Hu */}
-          <section className="py-4 mt-8">
+          <section className="py-4 mb-8">
             <div className="container mx-auto px-4">
               <div className="bg-white rounded-lg shadow-xl overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-[0.43fr_0.57fr] gap-4">
