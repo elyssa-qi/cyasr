@@ -48,7 +48,7 @@ interface EventsPost {
                       EVENT
                     </span>
                     <h2 className="text-[22px] md:text-2xl font-bold mb-4">
-                        _PLACEHOLDER_
+                        CYASR at OWFL Provincials
                     </h2>
                     <p className="text-gray-600 text-sm mb-4">
                     _PLACEHOLDER_
@@ -66,7 +66,6 @@ interface EventsPost {
               </div>
             </div>
           </section>
-        <div className="pt-16">
           {/* Interview with Grace Hu */}
           <section className="py-4 mt-8">
             <div className="container mx-auto px-4">
@@ -137,6 +136,7 @@ interface EventsPost {
               </div>
             </div>
           </section>
+          <div className="pt-16">
         </div>
       </div>
     );
