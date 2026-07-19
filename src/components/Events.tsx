@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import Navigation from "./Navigation";
 import { useNavigate } from "react-router-dom";
+import championshipBanner from '../designs/CoachIan.jpg';
+
 
 interface EventsPost {
     id: number;
@@ -29,6 +31,41 @@ interface EventsPost {
     return (
       <div className="min-h-screen bg-white">
         <Navigation />
+        {/* CYASR at OWFL Provincials */}
+        <section className="py-4 mb-8">
+            <div className="container mx-auto px-4">
+              <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-[0.43fr_0.57fr] gap-4">
+                  <div className="h-32 md:h-80">
+                    <img
+                      src={championshipBanner}
+                      alt="CYASR at OWFL Provincials"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col justify-center">
+                    <span className="text-sm text-[#4e73b2] font-semibold mb-2">
+                      EVENT
+                    </span>
+                    <h2 className="text-[22px] md:text-2xl font-bold mb-4">
+                        _PLACEHOLDER_
+                    </h2>
+                    <p className="text-gray-600 text-sm mb-4">
+                    _PLACEHOLDER_
+                    </p>
+                    <div>
+                      <Button 
+                        className="bg-[#4e73b2] hover:bg-[#3b5a8e] text-white"
+                        onClick={() => navigateToArticle("owfl-provincials")}
+                      >
+                        Read More
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         <div className="pt-16">
           {/* Interview with Grace Hu */}
           <section className="py-4 mt-8">
@@ -73,7 +110,7 @@ interface EventsPost {
                   <div className="h-32 md:h-80">
                     <img
                       src="https://images.unsplash.com/photo-1505619656705-59ebc350b547?w=1200&q=80"
-                      alt="Interview with Grace Hu"
+                      alt="Interview with Angel Xiao"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -108,6 +145,15 @@ interface EventsPost {
   const eventsPosts: EventsPost[] = [
     {
       id: 1,
+      image: championshipBanner,
+      category: "EVENT",
+      title: "CYASR at OWFL Championships",
+      excerpt: "_PLACEHOLDER_",
+      date: "July 11, 2026",
+      slug: "owfl-provincials"
+    },
+    {
+      id: 2,
       image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1200&q=80",
       category: "INTERVIEW",
       title: "Lucas Hu (Co-Founder) Interviews Grace Hu, College Fencer for UPenn",
@@ -116,13 +162,14 @@ interface EventsPost {
       slug: "interview-fencer-grace-hu"
     },
     {
-      id: 2,
+      id: 3,
       image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1200&q=80",
       category: "INTERVIEW",
       title: "Evelyn Su (Founder) Interviews Angel Xiao, College Fencer for Princeton",
       excerpt: "Angel Xiao, a first-year student at Princeton University, who represented Canada in the 2024 Paris Olympics talks about her experience in college fencing. She reflects on her physical setbacks, mental resilience and the lessons she has learned. In this interview, Angel provides insight into demands of high-level competition, but also into the determination and adaptability that define athletes at the highest level.",
       date: "September 23, 2025",
       slug: "interview-fencer-angel-xiao"
-    }
+    },
+    
   ];
   export default Events;
